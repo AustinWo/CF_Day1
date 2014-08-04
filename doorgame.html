@@ -1,0 +1,25 @@
+<script>
+	var guess, outputMessage;
+	var counter = 0;
+	var keepPlaying = true;
+	var answer = Math.floor((Math.random() * 4) + 1);
+	var randomBadOutput = function() {
+		var badOutput = [ "You open the door and are immediatly attacked by a lion. Sorry, wrong door.", "This door leads to a giant pit...which you of course fall into.", "Dragons do exsist and there is one behind this door. You are burninated", "THE VOID!", "You are greeted by an elderly person who begins to tell a story that will never end. You'll be here awhile.", "A wall of water rushes from behind the door. Bad choice.", "Oh no, Hell's Angels!", "This door is actaully the outer hatch of a spaceship. You are sucked into the vacuum of space.", "BEES! You're allergic."]
+			return badOutput [Math.floor(Math.random() * badOutput.length)]
+	}
+
+	while (keepPlaying && counter <= 5) {
+		guess = prompt("You awake trapped in a room with 4 doors. Only one of the doors leads to freedom. Which door do you choose? [1, 2, 3, or 4]");
+
+		if (guess == answer) {
+			outputMessage = "You have choosen well! You are on your way to freedom!";
+			keepPlaying = false;
+		} else {
+			outputMessage = (randomBadOutput());
+		};
+		counter++;
+
+		alert(outputMessage);
+	}
+	
+</script>
